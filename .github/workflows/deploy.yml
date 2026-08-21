@@ -40,8 +40,8 @@ jobs:
             echo "::error::FTP_PORT precisa ser exatamente 21."
             exit 1
           fi
-          if [[ "$FTP_SERVER_DIR" != "/" ]]; then
-            echo "::error::FTP_SERVER_DIR precisa ser exatamente /."
+          if [[ -z "$FTP_SERVER_DIR" ]]; then
+            echo "::error::FTP_SERVER_DIR precisa estar configurado com o caminho da pasta pública do subdomínio."
             exit 1
           fi
 
