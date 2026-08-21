@@ -1,0 +1,47 @@
+﻿(function () {
+  "use strict";
+
+  const header = document.querySelector("[data-blog-header]");
+  const footer = document.querySelector("[data-blog-footer]");
+  const topic = document.body.dataset.articleTopic || "os cursos profissionais";
+  const message = encodeURIComponent(`Olá, li o artigo da VIADUCA sobre ${topic} e quero saber mais.`);
+
+  if (header) {
+    header.outerHTML = `
+      <header class="site-header">
+        <div class="header-inner">
+          <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+          <a href="../index.html" class="brand"><picture><source srcset="../assets/img/emblem.webp" type="image/webp"><img src="../assets/img/emblem.png" alt="VIADUCA" class="emblem" width="420" height="420"></picture></a>
+          <nav class="main-nav" id="main-nav">
+            <a href="../index.html#sobre">Sobre nós</a>
+            <div class="nav-dropdown"><a href="../index.html#cursos" class="nav-drop-toggle">Cursos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a><div class="nav-dropdown-menu"><a href="../cursos/mopp.html">MOPP</a><a href="../cursos/transporte-escolar.html">Transporte Escolar</a><a href="../cursos/transporte-coletivo.html">Transporte Coletivo</a><a href="../cursos/transporte-emergencia.html">Transporte de Emergência</a><a href="../cursos/carga-indivisivel.html">Carga Indivisível</a></div></div>
+            <a href="../index.html#como-funciona">Como funciona</a><a href="../index.html#duvidas">Dúvidas</a><a href="index.html" aria-current="page">Blog</a><a href="../index.html#contato">Contato</a>
+          </nav>
+          <div class="header-cta"><a class="btn btn-gold btn-sm" href="https://wa.me/5545933005119?text=${message}" target="_blank" rel="noopener">Matricule-se</a></div>
+        </div>
+      </header>`;
+  }
+
+  if (footer) {
+    footer.outerHTML = `
+      <footer class="site-footer" id="contato">
+        <div class="footer-signature" aria-hidden="true"><span></span><picture><source srcset="../assets/img/emblem.webp" type="image/webp"><img src="../assets/img/emblem.png" alt="" width="90" height="90" loading="lazy"></picture><span></span></div>
+        <div class="wrap footer-wrap">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <picture class="footer-wordmark"><source srcset="../assets/img/wordmark.webp" type="image/webp"><img src="../assets/img/wordmark.png" alt="VIADUCA" width="519" height="93" loading="lazy"></picture>
+              <strong class="footer-brand-title">Cursos Profissionais de Trânsito</strong><p class="footer-description">Qualificação 100% online para motoristas e profissionais de todo o Brasil.</p><span class="footer-gold-rule" aria-hidden="true"></span>
+              <div class="footer-benefits" aria-label="Benefícios VIADUCA"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>100%<br> online</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Acesso<br> 24h</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.6 2.2 2.1 3.7 4.5 4.5"/></svg><span>Suporte<br> WhatsApp</span></div></div>
+              <div class="footer-company"><p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg><span>VIADUCA — uma marca da<br> Matos Soluções LTDA.</span></p><p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></svg><span id="cnpj-line" hidden></span></p></div>
+            </div>
+            <nav class="footer-group" aria-labelledby="footer-explore-title"><button class="footer-group-toggle" id="footer-explore-title" aria-expanded="true" aria-controls="footer-explore-panel">Explore <span aria-hidden="true">+</span></button><div class="footer-group-panel" id="footer-explore-panel"><a href="../index.html#cursos"><span>Cursos para Motoristas</span><b aria-hidden="true">→</b></a><a href="../index.html#capacitacoes"><span>Capacitações Complementares</span><b aria-hidden="true">→</b></a><a href="../index.html#capacitacoes"><span>Normas Regulamentadoras</span><b aria-hidden="true">→</b></a><a href="../index.html#como-funciona"><span>Como funciona</span><b aria-hidden="true">→</b></a><a href="../index.html#pre-requisitos"><span>Pré-requisitos</span><b aria-hidden="true">→</b></a></div></nav>
+            <nav class="footer-group" aria-labelledby="footer-viaduca-title"><button class="footer-group-toggle" id="footer-viaduca-title" aria-expanded="true" aria-controls="footer-viaduca-panel">VIADUCA <span aria-hidden="true">+</span></button><div class="footer-group-panel" id="footer-viaduca-panel"><a href="../index.html#sobre"><span>Sobre nós</span><b aria-hidden="true">→</b></a><a href="../index.html#por-que-viaduca"><span>Por que a VIADUCA</span><b aria-hidden="true">→</b></a><a href="../index.html#cobertura"><span>Cobertura Nacional</span><b aria-hidden="true">→</b></a><a href="../index.html#duvidas"><span>Dúvidas Frequentes</span><b aria-hidden="true">→</b></a><a href="../blog/index.html"><span>Blog</span><b aria-hidden="true">→</b></a></div></nav>
+            <section class="footer-group footer-contact" aria-labelledby="footer-contact-title"><button class="footer-group-toggle" id="footer-contact-title" aria-expanded="true" aria-controls="footer-contact-panel">Atendimento <span aria-hidden="true">+</span></button><div class="footer-group-panel" id="footer-contact-panel"><div class="footer-contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.6 2.2 2.1 3.7 4.5 4.5"/></svg><p><strong>WhatsApp</strong><a href="https://wa.me/5545933005119?text=${message}" target="_blank" rel="noopener">(45) 93300-5119</a><small>Fale com nossa equipe</small></p></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><p><strong>E-mail</strong><a href="mailto:projetos@matossolucoes.com">projetos@matossolucoes.com</a><small>Envie sua dúvida</small></p></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><p><strong>Atendimento Nacional</strong><small>Online em todo o Brasil</small></p></div><a class="footer-contact-cta" href="https://wa.me/5545933005119?text=${message}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg><span>Falar com a VIADUCA</span><b aria-hidden="true">→</b></a></div></section>
+          </div>
+          <nav class="footer-policies" aria-labelledby="footer-policies-title"><button class="footer-group-toggle" id="footer-policies-title" aria-expanded="true" aria-controls="footer-policies-panel">Políticas <span aria-hidden="true">+</span></button><div class="footer-policies-panel" id="footer-policies-panel"><a href="../politica-privacidade.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg>Privacidade</a><a href="../termos-de-uso.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></svg>Termos de Uso</a><a href="../politica-de-compra.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M3 4h2l2.5 11h10l2-7H7"/></svg>Compra e Cancelamento</a></div></nav>
+          <div class="footer-bottom"><p>© 2026 VIADUCA — Todos os direitos reservados.<small>VIADUCA é uma marca da Matos Soluções LTDA.</small></p><p class="footer-credit"><small>Desenvolvido por</small><strong>Matos Soluções</strong></p></div>
+        </div>
+      </footer>
+      <a class="wa-float" href="https://wa.me/5545933005119?text=${message}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 8.1 8.11c0 4.47-3.63 8.1-8.1 8.1a8.05 8.05 0 0 1-4.11-1.13l-.29-.17-3.14.82.84-3.06-.19-.31a8.02 8.02 0 0 1-1.24-4.3 8.1 8.1 0 0 1 8.13-8.06m-4.3 4.13c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.13.17 1.75 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2s.21-1.09.15-1.2c-.06-.11-.23-.17-.48-.3-.25-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.12-.17.26-.65.83-.8 1-.15.17-.29.19-.55.06-.25-.13-1.07-.4-2.03-1.26-.75-.67-1.26-1.5-1.4-1.75-.15-.26-.02-.4.11-.52.11-.11.25-.29.38-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.4-.79-1.91-.2-.5-.42-.43-.57-.44Z"/></svg></a>`;
+  }
+})();

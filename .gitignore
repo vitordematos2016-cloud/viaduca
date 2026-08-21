@@ -1,0 +1,35 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies, editor state and operating-system files
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs, caches and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
+.tmp-*
+.cache/
+tmp/
+temp/
+
+# Local review artifacts and screenshots
+.footer-review/
+.hero-review/
+.offers-review/
+assets/img/_backup-logo-antiga/
+
+# Local planning and research notes
+findings.md
+progress.md
+task_plan.md
+GEMINI.md
+Sites PROFISSIONAIS

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /.tmp/
+
+Sitemap: https://viaduca.matossolucoes.com/sitemap.xml
