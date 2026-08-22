@@ -10,12 +10,13 @@
     header.outerHTML = `
       <header class="site-header">
         <div class="header-inner">
-          <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+          <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
           <a href="../index.html" class="brand"><picture><source srcset="../assets/img/emblem.webp" type="image/webp"><img src="../assets/img/emblem.png" alt="VIADUCA" class="emblem" width="420" height="420"></picture></a>
           <nav class="main-nav" id="main-nav">
             <a href="../index.html#sobre">Sobre nós</a>
             <div class="nav-dropdown"><a href="../index.html#cursos" class="nav-drop-toggle">Cursos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a><div class="nav-dropdown-menu"><a href="../cursos/mopp.html">MOPP</a><a href="../cursos/transporte-escolar.html">Transporte Escolar</a><a href="../cursos/transporte-coletivo.html">Transporte Coletivo</a><a href="../cursos/transporte-emergencia.html">Transporte de Emergência</a><a href="../cursos/carga-indivisivel.html">Carga Indivisível</a></div></div>
             <a href="../index.html#como-funciona">Como funciona</a><a href="../index.html#duvidas">Dúvidas</a><a href="index.html" aria-current="page">Blog</a><a href="../index.html#contato">Contato</a>
+            <div class="nav-mobile-footer" aria-hidden="true"><span class="nav-mobile-footer-info">100% Online <span class="nav-mobile-footer-sep">&bull;</span> Atendimento Nacional</span><span class="nav-mobile-footer-brand">Cursos Profissionais de Trânsito</span></div>
           </nav>
           <div class="header-cta"><a class="btn btn-gold btn-sm" href="https://wa.me/5545933005119?text=${message}" target="_blank" rel="noopener">Matricule-se</a></div>
         </div>

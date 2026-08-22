@@ -270,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Abrir menu');
-      toggle.textContent = '☰';
       closeCourseAccordion();
     }
 
@@ -301,7 +300,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.toggle('nav-open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-      toggle.textContent = isOpen ? '✕' : '☰';
       if (!isOpen) closeCourseAccordion();
     });
     nav.querySelectorAll('a').forEach(function (link) {
