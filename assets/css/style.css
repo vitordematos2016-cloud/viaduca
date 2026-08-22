@@ -360,6 +360,8 @@ nav.main-nav a:focus-visible { outline: 2px solid var(--gold-light); outline-off
   }
   .nav-mobile-footer-info { color: var(--text-faint); font-size: .68rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
   .nav-mobile-footer-sep { color: var(--gold); }
+  .nav-mobile-footer-badge { display: flex; align-items: center; gap: 5px; color: var(--gold-light); font-size: .68rem; font-weight: 700; letter-spacing: .03em; }
+  .nav-mobile-footer-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 6px rgba(205,164,77,.6); }
   .nav-mobile-footer-brand { color: var(--text-faint); font-size: .66rem; opacity: .8; }
   .nav-mega-divider { margin: 8px 4px; }
   /* backdrop-filter on the header creates a containing block for fixed
