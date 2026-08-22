@@ -2006,10 +2006,10 @@ footer.site-footer::after { right:5px; bottom:0; transform:rotate(180deg); }
   .footer-signature picture { height:70px; }
   .footer-signature img { width:66px; height:66px; }
   .footer-grid { display:block; margin-bottom:0; }
-  .footer-brand { padding-bottom:24px; }
+  .footer-brand { display:flex; flex-direction:column; align-items:center; text-align:center; padding-bottom:24px; }
   .footer-wordmark { width:235px; }
   .footer-description { max-width:330px; }
-  .footer-benefits { justify-content:flex-start; gap:clamp(18px,8vw,34px); }
+  .footer-benefits { justify-content:center; gap:clamp(18px,8vw,34px); }
   .footer-company { display:flex; flex-direction:column; align-items:center; width:100%; }
   .footer-group { border-top:1px solid rgba(255,255,255,.1); }
   .footer-group-toggle { display:block; padding:17px 2px; cursor:pointer; }
