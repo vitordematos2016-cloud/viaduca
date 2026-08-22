@@ -2010,6 +2010,7 @@ footer.site-footer::after { right:5px; bottom:0; transform:rotate(180deg); }
   .footer-wordmark { width:235px; }
   .footer-description { max-width:330px; }
   .footer-benefits { justify-content:flex-start; gap:clamp(18px,8vw,34px); }
+  .footer-company { display:flex; flex-direction:column; align-items:center; width:100%; }
   .footer-group { border-top:1px solid rgba(255,255,255,.1); }
   .footer-group-toggle { display:block; padding:17px 2px; cursor:pointer; }
   .footer-group-toggle::after { display:none; }
