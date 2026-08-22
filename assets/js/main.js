@@ -5,12 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var legacyScene = document.getElementById('legacy-iso-scene');
     if (legacyScene) legacyScene.remove();
     var sceneCourses = [
-      { name: 'Transporte Escolar', image: 'assets/img/IMAGENS-VEICULOS-INICIO/TRANSPORTE-ESCOLAR.webp', position: '52% center' },
-      { name: 'Transporte MOPP', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CURSO-MOPP.webp', position: '50% center' },
-      { name: 'Veículos de Emergência', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CONDUTOR-EMERGENCIA.webp', position: '51% center' },
-      { name: 'Transporte Coletivo', image: 'assets/img/IMAGENS-VEICULOS-INICIO/TRANSPORTE-COLETIVO.webp', position: '51% center' },
-      { name: 'Cargas Indivisíveis', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CARGAS-INDIVISIVEIS.webp', position: '49% center' }
+      { name: 'Transporte Escolar', image: 'assets/img/IMAGENS-VEICULOS-INICIO/TRANSPORTE-ESCOLAR.webp', position: '52% center', positionMobile: '66% center' },
+      { name: 'Transporte MOPP', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CURSO-MOPP.webp', position: '50% center', positionMobile: '64% center' },
+      { name: 'Veículos de Emergência', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CONDUTOR-EMERGENCIA.webp', position: '51% center', positionMobile: '65% center' },
+      { name: 'Transporte Coletivo', image: 'assets/img/IMAGENS-VEICULOS-INICIO/TRANSPORTE-COLETIVO.webp', position: '51% center', positionMobile: '65% center' },
+      { name: 'Cargas Indivisíveis', image: 'assets/img/IMAGENS-VEICULOS-INICIO/CARGAS-INDIVISIVEIS.webp', position: '49% center', positionMobile: '63% center' }
     ];
+    // O crop mobile (aspect-ratio 4/3) é mais agressivo que o desktop (3/2) e
+    // corta a sinalização à direita das fotos com a posição usada no desktop.
+    function scenePosition(course) {
+      return window.innerWidth <= 560 ? course.positionMobile : course.position;
+    }
     var currentIndex = 0, sceneTimer = null, isTransitioning = false, sceneVisible = true, sceneReady = false, sceneAssets = [];
     var sceneReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     var currentImage = heroScene.querySelector('.hero-scene-current');
@@ -21,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (Number.isInteger(inspectedSlide) && inspectedSlide >= 0 && inspectedSlide < sceneCourses.length) {
       currentIndex = inspectedSlide;
       currentImage.src = sceneCourses[currentIndex].image;
-      currentImage.style.objectPosition = sceneCourses[currentIndex].position;
+      currentImage.style.objectPosition = scenePosition(sceneCourses[currentIndex]);
       nextImage.src = sceneCourses[(currentIndex + 1) % sceneCourses.length].image;
     }
     var scenePreloads = sceneCourses.map(function (course) {
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // camada NEXT opaca e fazemos o commit sem transição em um único frame.
       heroScene.classList.add('is-committing');
       currentImage.src = course.image;
-      currentImage.style.objectPosition = course.position;
+      currentImage.style.objectPosition = scenePosition(course);
       heroScene.classList.remove('is-transitioning');
       updateSceneUI(nextIndex);
       sceneName.classList.remove('is-changing');
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
       isTransitioning = true;
       var course = sceneCourses[index];
       nextImage.src = course.image;
-      nextImage.style.objectPosition = course.position;
+      nextImage.style.objectPosition = scenePosition(course);
       sceneName.classList.add('is-changing');
       if (sceneReduced.matches) { commitScene(index); return; }
       nextImage.addEventListener('transitionend', function onSceneTransition(event) {
